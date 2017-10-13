@@ -6,7 +6,7 @@ export class spaceAge {
     this.mood = mood;
   }
   // -->Take a person’s age in years and convert it into seconds.
-  secondsConverter() {
+  secondsConverter(age) {
     const secondsInYear = 31536000;
     let ageInSeconds = age * secondsInYear;
     return ageInSeconds;
