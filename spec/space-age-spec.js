@@ -22,7 +22,12 @@ describe('spaceAge', function(){
     expect(userGood.name, userGood.age, userGood.gender, userGood.mood).toEqual('Jill', 20, 'female', 'good');
   });
 
-
+  it('should calculate a user\'s age in seconds', function(){
+    test = userGood.age
+    debugger;
+    expect(test.secondsConverter()).toEqual(630720000)
+    // getting age is not defined or 'userGood.age.secondsConverter is not a function' -- tried everything
+  });
 
 
 
