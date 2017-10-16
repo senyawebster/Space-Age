@@ -24,7 +24,26 @@ export class spaceAge {
     let secondsAge = age * 3.154e+7;
     return secondsAge;
   }
+      // ^^^ should I make a new class here or refactor to fit the constructor above?
 
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+
+    var y = today.getFullYear() - birthDate.getFullYear();
+    debugger;
+    var m = today.getMonth() - birthDate.getMonth();
+    var d = today.getDate() - birthdate.getDate();
+
+    var age = (y * 31536000) + (m * 2628000) + (d * 86400);
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+  alert('age: ' + getAge("1980/08/10"));
+    // The code above is what I have so far assessing someone's age in seconds and excluding non-aged people (with birthdates in the future), but I haven't been able to get m & d to be defined. I can run the calculations the variables represent in jsFIDDLE no problem, but the variables still aren't defined.
 
 
   // -->Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
