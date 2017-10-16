@@ -43,7 +43,7 @@ export class spaceAge {
     return age;
   }
   alert('age: ' + getAge("1980/08/10"));
-    // The code above is what I have so far assessing someone's age in seconds and excluding non-aged people (with birthdates in the future), but I haven't been able to get m & d to be defined. I can run the calculations the variables represent in jsFIDDLE no problem, but the variables still aren't defined.
+    // The code above is for assessing someone's age in seconds and excluding non-aged people (with birthdates in the future), but I haven't been able to get d to be defined. I can run the calculations the variable represents in jsFIDDLE no problem, but the variable still isn't defined. https://jsfiddle.net/jb8zkzj6/
 
 
   // -->Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
