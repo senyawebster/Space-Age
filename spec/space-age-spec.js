@@ -26,8 +26,8 @@ describe('spaceAge', function(){
   });
 
   it('should register a user', function() {
-    // expect(userGood.name, userGood.birthdate, userGood.gender, userGood.mood).toEqual('Jill', '2016-10-16', 'female', 'good');
-    expect(userGood).toEqual(spaceAge {name: "Jill", birthdate: "2016-10-16", gender: "female", mood: "good"});
+    expect(userGood.name, userGood.birthdate, userGood.gender, userGood.mood).toEqual('Jill', '2016-10-16', 'female', 'good');
+    // expect(userGood).toEqual(spaceAge {name: "Jill", birthdate: "2016-10-16", gender: "female", mood: "good"});
   });
 
   // it('should calculate a user\'s age in seconds', function(){
@@ -36,14 +36,14 @@ describe('spaceAge', function(){
   // });
 
   it('should calculate age in seconds based on bday', function() {
-    let birthdate = userGood.birthdate
+    let birthdate = userGood.birthdate;
     expect(userGood.getAge(birthdate)).toEqual(31557600);
   });
   // This test WAS working but then stopped after I started working on the 3rd
 
+
   it('should prevent a user from entering a future birthdate', function() {
-    let birthdate = unbornUser.birthdate
-    debugger;
+    let birthdate = unbornUser.birthdate;
     expect(unbornUser.getAge(birthdate)).toEqual("You haven't been born yet silly");
   });
   // This error keeps popping up "uncaught Error: bundle error (see logs)" ——> I can't tell why but it came up in prior tests and then disappeared for seemingly no reason?

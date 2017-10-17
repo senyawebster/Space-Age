@@ -16,7 +16,7 @@
       </div>
 
       <div class="card">
-        <form>
+        <form id="user">
           <input id="name" type="text" name="name" placeholder="Your Name">
           <!-- <div class="form-group">
             <input type="radio" name="maleGender" value="male" checked> Male>
@@ -24,10 +24,16 @@
           </div> -->
           <input id="gender" type="text" name="gender" placeholder="Your Gender (male/female)">
           <input id="mood" type="text" name="mood" placeholder="Your Mood: good/bad">
-          <input id="bday" type="date" name="bday" value="bday">
+          <input id="birthdate" type="datetime-local" name="birthdate" value="birthdate">
           <button class="btn btn-succes" type="submit" name="submit">Submit</button>
         </form>
       </div>
+
+      <div class="card">
+        <h4>Earth Age in Seconds: <span id="earthAgeInSeconds"></span></h4>
+        <h4>Mercury Age in Seconds: <span id="mercuryAgeInSeconds"></span></h4>
+      </div>
+
     </div>
   </body>
 </html>

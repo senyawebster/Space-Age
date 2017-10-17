@@ -13,9 +13,9 @@ export class spaceAge {
   // }
 
   // -->Take two dates and determine the difference, in seconds, between the two. (This way a user can enter a birthdate and the application can compare the birthdate against the current time to come up with an accurate age.)
-  getAge(dateString) {
+  getAge() {
     let today = new Date();
-    let birthDate = new Date(dateString);
+    let birthDate = new Date(this.birthdate);
 
     let y = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
@@ -34,11 +34,12 @@ export class spaceAge {
 
 
   // -->Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
-  getMercuryAge(earthAgeInSeconds) {
-    let birthdate = this.birthdate;
-    return (this.getAge(birthdate) / 0.24).toFixed;
+  getMercuryAge() {
+    let earthAgeInSeconds = this.getAge();
+    return (earthAgeInSeconds / 0.24).toFixed(3);
   }
-  // ---> I'm not sure how to pass an output from one function in a class through another function as an input
+      // ---> I'm not sure how to pass an output from one function in a class through another function as an input
+
 
   // -->Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
 
