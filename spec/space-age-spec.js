@@ -8,7 +8,7 @@ describe('spaceAge', function(){
   beforeEach(function() {
     userGood = new spaceAge();
     userGood.name = 'Jill';
-    userGood.birthdate = '2016-10-16';
+    userGood.birthdate = '2016-10-17';
     userGood.gender = 'female';
     userGood.mood = 'good';
 
@@ -36,19 +36,36 @@ describe('spaceAge', function(){
   // });
 
   it('should calculate age in seconds based on bday', function() {
-    let birthdate = userGood.birthdate;
-    expect(userGood.getAge(birthdate)).toEqual(31557600);
+    // let birthdate = userGood.birthdate;
+    expect(userGood.getAge()).toEqual(31557600);
   });
-  // This test WAS working but then stopped after I started working on the 3rd
+      // Make sure you enter TODAY'S DATE in userGood's birthdate in the beforeEach
 
 
   it('should prevent a user from entering a future birthdate', function() {
-    let birthdate = unbornUser.birthdate;
-    expect(unbornUser.getAge(birthdate)).toEqual("You haven't been born yet silly");
+    // let birthdate = unbornUser.birthdate;
+    expect(unbornUser.getAge()).toEqual("You haven't been born yet silly");
   });
-  // This error keeps popping up "uncaught Error: bundle error (see logs)" ——> I can't tell why but it came up in prior tests and then disappeared for seemingly no reason?
 
+  it('should calculate Mercury age in years based on birthdate', function() {
+    // let birthdate = userGood.birthdate;
+    expect(userGood.getMercuryAge()).toEqual('4.167');
+  });
 
+  it('should calculate Venus age in years based on birthdate', function() {
+    // let birthdate = userGood.birthdate;
+    expect(userGood.getVenusAge()).toEqual('1.613');
+  });
+
+  it('should calculate Mars age in years based on birthdate', function() {
+    // let birthdate = userGood.birthdate;
+    expect(userGood.getMarsAge()).toEqual('0.532');
+  });
+
+  it('should calculate Jupiter age in years based on birthdate', function() {
+    // let birthdate = userGood.birthdate;
+    expect(userGood.getJupiterAge()).toEqual('0.084');
+  });
 
 
 

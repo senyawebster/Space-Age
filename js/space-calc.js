@@ -36,16 +36,31 @@ export class spaceAge {
   // -->Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
   getMercuryAge() {
     let earthAgeInSeconds = this.getAge();
-    return (earthAgeInSeconds / 0.24).toFixed(3);
+    let mercuryAgeInSeconds = (earthAgeInSeconds / 0.24);
+    return (mercuryAgeInSeconds/ 31557600).toFixed(3);
   }
-      // ---> I'm not sure how to pass an output from one function in a class through another function as an input
 
 
   // -->Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
+  getVenusAge() {
+    let earthAgeInSeconds = this.getAge();
+    let venusAgeInSeconds = (earthAgeInSeconds / 0.62);
+    return (venusAgeInSeconds/ 31557600).toFixed(3);
+  }
 
   // -->Return the age of a human in Mars years. (A Mars year is 1.88 Earth years.)
+  getMarsAge() {
+    let earthAgeInSeconds = this.getAge();
+    let marsAgeInSeconds = (earthAgeInSeconds / 1.88);
+    return (marsAgeInSeconds/ 31557600).toFixed(3);
+  }
 
   // -->Return the age of a human in Jupiter years. (A Jupiter year is 11.86 Earth years.)
+  getJupiterAge() {
+    let earthAgeInSeconds = this.getAge();
+    let jupiterAgeInSeconds = (earthAgeInSeconds / 11.86);
+    return (jupiterAgeInSeconds/ 31557600).toFixed(3);
+  }
 
   // -->Determine how many years a user has left to live on each planet… (yikes!) To do this, the application will have to calculate the user’s life expectancy. (Note that life expectancy shouldn’’t be a hard-coded value. After all, it can vary from country to country and depending on various demographics.)
 
