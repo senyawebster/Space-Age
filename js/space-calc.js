@@ -64,6 +64,7 @@ export class spaceAge {
 
   // -->Determine how many years a user has left to live on each planet… (yikes!) To do this, the application will have to calculate the user’s life expectancy. (Note that life expectancy shouldn’’t be a hard-coded value. After all, it can vary from country to country and depending on various demographics.)
 
+
   // -->If a user has already surpassed the average life expectancy, your application should account for (and test) this possible outcome as well.
 
 }
