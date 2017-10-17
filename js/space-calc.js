@@ -1,34 +1,44 @@
 export class spaceAge {
-  constructor(name, age, gender, mood) {
+  constructor(name, birthdate, gender, mood) {
     this.name = name;
-    this.age = age;
+    this.birthdate = birthdate;
     this.gender = gender;
     this.mood = mood;
   }
   // -->Take a person’s age in years and convert it into seconds.
-  secondsConverter(age) {
-    const secondsInYear = 31536000;
-    let ageInSeconds = age * secondsInYear;
-    return ageInSeconds;
-  }
+  // secondsConverter(age) {
+  //   const secondsInYear = 31536000;
+  //   let ageInSeconds = age * secondsInYear;
+  //   return ageInSeconds;
+  // }
 
   // -->Take two dates and determine the difference, in seconds, between the two. (This way a user can enter a birthdate and the application can compare the birthdate against the current time to come up with an accurate age.)
-  function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
+  getAge(dateString) {
+    let today = new Date();
+    let birthDate = new Date(dateString);
 
-    var y = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    var d = today.getDate() - birthDate.getDate();
-    var ageInSeconds = (y * 31536000) + (m * 2628000) + (d * 86400);
+    let y = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+    let d = today.getDate() - birthDate.getDate();
+    let earthAgeInSeconds = ((y * 31557600) + (m * 2629800) + (d * 86400) - 86400);
 
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        ageInSeconds--;
+    // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    //     earthAgeInSeconds;
+    // }
+    if (earthAgeInSeconds <= 0) {
+      return "You haven't been born yet silly";
+    } else {
+      return earthAgeInSeconds;
     }
-		return ageInSeconds;
   }
 
+
   // -->Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
+  getMercuryAge(earthAgeInSeconds) {
+    let birthdate = this.birthdate;
+    return (this.getAge(birthdate) / 0.24).toFixed;
+  }
+  // ---> I'm not sure how to pass an output from one function in a class through another function as an input
 
   // -->Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
 
