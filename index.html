@@ -29,11 +29,40 @@
         </form>
       </div>
 
-      <div class="card">
+      <div class="card form-group">
         <h4>Earth Age in Seconds: <span id="earthAgeInSeconds"></span></h4>
-        <h4>Mercury Age in Seconds: <span id="mercuryAgeInSeconds"></span></h4>
-      </div>
+        <div class="row">
 
+        </div>
+
+        <table class="table table-hover">
+          <thead class="thead-inverse">
+            <tr>
+              <th></th>
+              <th>Mercury</th>
+              <th>Venus</th>
+              <th>Mars</th>
+              <th>Jupiter</th>
+            </tr>
+          </thead>
+          <tbody id="returnBike" >
+            <tr>
+              <td>Age in Earth Years</td>
+              <td><span id="mercuryAgeInYears"></span></td>
+              <td><span id="venusAgeInYears"></span></td>
+              <td><span id="marsAgeInYears"></span></td>
+              <td><span id="jupiterAgeInYears"></span></td>
+            </tr>
+            <tr>
+              <td>Years Left in Earth Years</td>
+              <td><span id="mercuryYearsLeftInEarthYears"></span></td>
+              <td><span id="venusYearsLeftInEarthYears"></span></td>
+              <td><span id="marsYearsLeftInEarthYears"></span></td>
+              <td><span id="jupiterYearsLeftInEarthYears"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

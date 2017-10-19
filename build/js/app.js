@@ -149,18 +149,29 @@ var spaceAge = exports.spaceAge = function () {
 var _spaceCalc = require('./../js/space-calc.js');
 
 $(document).ready(function () {
+  var user = $('#user');
   $('#user').submit(function (event) {
     event.preventDefault();
     console.log("hi");
-    var name = $('name').val();
-    var gender = $('gender').val();
-    var mood = $('mood').val();
-    var birthdate = $('birthdate').val();
+    var name = $('#name').val();
+    var gender = $('#gender').val();
+    var mood = $('#mood').val();
+    var birthdate = $('#birthdate').val();
 
-    var user = new _spaceCalc.spaceAge(name, birthdate, gender, mood);
+    user = new _spaceCalc.spaceAge(name, birthdate, gender, mood);
 
+    $("span#userName").text(user.name + '\'s \'');
     $("span#earthAgeInSeconds").text(user.getAge());
-    $("span#mercuryAgeInSeconds").text(user.getMercuryAge());
+
+    $("span#mercuryAgeInYears").text(user.getMercuryAge());
+    $("span#venusAgeInYears").text(user.getVenusAge());
+    $("span#marsAgeInYears").text(user.getMarsAge());
+    $("span#jupiterAgeInYears").text(user.getJupiterAge());
+
+    $("span#mercuryYearsLeftInEarthYears").text(user.lifeLeftOnMercury());
+    $("span#venusYearsLeftInEarthYears").text(user.lifeLeftOnVenus());
+    $("span#marsYearsLeftInEarthYears").text(user.lifeLeftOnMars());
+    $("span#jupiterYearsLeftInEarthYears").text(user.lifeLeftOnJupiter());
   });
 });
 
