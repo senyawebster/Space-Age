@@ -63,7 +63,44 @@ export class spaceAge {
   }
 
   // -->Determine how many years a user has left to live on each planet… (yikes!) To do this, the application will have to calculate the user’s life expectancy. (Note that life expectancy shouldn’’t be a hard-coded value. After all, it can vary from country to country and depending on various demographics.)
+  lifeExpectancy(gender, mood) {
+    let life = 75;
+    if (this.gender === 'male') {
+      life -= 5;
+    } else {
+      life += 5;
+    }
+    if (this.mood === 'bad') {
+      life -= 5;
+    } else {
+      life += 5;
+    }
+    return life;
+  }
 
+  lifeLeftOnMercury() {
+    let age = this.getMercuryAge();
+    let expect = this.lifeExpectancy();
+    return ((expect - age) / .24).toFixed(0);
+  }
+
+  lifeLeftOnVenus() {
+    let age = this.getVenusAge();
+    let expect = this.lifeExpectancy();
+    return ((expect - age) / .62).toFixed(0);
+  }
+
+  lifeLeftOnMars() {
+    let age = this.getMarsAge();
+    let expect = this.lifeExpectancy();
+    return ((expect - age) / 1.88).toFixed(0);
+  }
+
+  lifeLeftOnJupiter() {
+    let age = this.getJupiterAge();
+    let expect = this.lifeExpectancy();
+    return ((expect - age) / 11.86).toFixed(0);
+  }
 
   // -->If a user has already surpassed the average life expectancy, your application should account for (and test) this possible outcome as well.
 

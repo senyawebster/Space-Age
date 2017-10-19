@@ -6,21 +6,22 @@ describe('spaceAge', function(){
   let unbornUser;
 
   beforeEach(function() {
+    //!! Make sure you enter TODAY'S DATE in the users' birthdates
     userGood = new spaceAge();
     userGood.name = 'Jill';
-    userGood.birthdate = '2016-10-17';
+    userGood.birthdate = '2016-10-18';
     userGood.gender = 'female';
     userGood.mood = 'good';
 
     unbornUser = new spaceAge();
     unbornUser.name = 'unborn';
-    unbornUser.birthdate = '2018-10-16';
+    unbornUser.birthdate = '2018-10-18';
     unbornUser.gender = 'whatever';
     unbornUser.mood = 'whatever';
 
     userBad = new spaceAge();
     userBad.name = 'Jack';
-    userBad.birthdate = '2016-10-16';
+    userBad.birthdate = '2016-10-18';
     userBad.gender = 'male';
     userBad.mood = 'bad';
   });
@@ -67,6 +68,28 @@ describe('spaceAge', function(){
     expect(userGood.getJupiterAge()).toEqual('0.084');
   });
 
+  it('should calculate high life expectancy', function() {
+    expect(userGood.lifeExpectancy()).toEqual(85);
+  });
 
+  it('should calculate low life expectancy', function() {
+    expect(userBad.lifeExpectancy()).toEqual(65);
+  });
+
+  it('should calculate life left on Mercury in Earth years', function() {
+    expect(userGood.lifeLeftOnMercury()).toEqual('337');
+  });
+
+  it('should calculate life left on Venus in Earth years', function() {
+    expect(userGood.lifeLeftOnVenus()).toEqual('134');
+  });
+
+  it('should calculate life left on Mars in Earth years', function() {
+    expect(userGood.lifeLeftOnMars()).toEqual('45');
+  });
+
+  it('should calculate life left on Jupiter in Earth years', function() {
+    expect(userGood.lifeLeftOnJupiter()).toEqual('7');
+  });
 
 });
